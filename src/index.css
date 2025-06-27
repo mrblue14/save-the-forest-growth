@@ -1,6 +1,10 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
@@ -24,7 +28,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 25 80% 58%;
+    --accent: 45 85% 62%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -65,7 +69,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 25 80% 58%;
+    --accent: 45 85% 62%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -92,42 +96,101 @@
 
   body {
     @apply bg-background text-foreground font-body;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
+    font-feature-settings: "kern" 1, "liga" 1;
   }
 }
 
-/* Enhanced utility classes with warm accents */
+/* Enhanced utility classes with nature-inspired colors */
 @layer utilities {
   .bg-gradient-forest {
-    background: linear-gradient(135deg, rgb(71 189 71) 0%, rgb(53 158 53) 100%);
+    background: linear-gradient(135deg, rgb(34 101 34) 0%, rgb(21 128 61) 100%);
+  }
+  
+  .bg-gradient-mint {
+    background: linear-gradient(135deg, rgb(16 185 129) 0%, rgb(5 150 105) 100%);
   }
   
   .bg-gradient-earth {
-    background: linear-gradient(135deg, rgb(209 129 75) 0%, rgb(195 105 64) 100%);
+    background: linear-gradient(135deg, rgb(146 64 14) 0%, rgb(120 53 15) 100%);
   }
 
-  .bg-gradient-warm {
-    background: linear-gradient(135deg, rgb(245 150 50) 0%, rgb(228 94 7) 100%);
+  .bg-gradient-sage {
+    background: linear-gradient(135deg, rgb(132 148 132) 0%, rgb(107 114 128) 100%);
+  }
+
+  .bg-gradient-sky {
+    background: linear-gradient(135deg, rgb(56 189 248) 0%, rgb(14 165 233) 100%);
   }
 
   .bg-gradient-gold {
     background: linear-gradient(135deg, rgb(251 191 36) 0%, rgb(245 158 11) 100%);
   }
 
+  .bg-gradient-warm {
+    background: linear-gradient(135deg, rgb(251 191 36) 0%, rgb(245 158 11) 100%);
+  }
+
   .text-gradient-forest {
-    background: linear-gradient(135deg, rgb(71 189 71) 0%, rgb(53 158 53) 100%);
+    background: linear-gradient(135deg, rgb(34 101 34) 0%, rgb(21 128 61) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-mint {
+    background: linear-gradient(135deg, rgb(16 185 129) 0%, rgb(5 150 105) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-warm {
-    background: linear-gradient(135deg, rgb(245 150 50) 0%, rgb(228 94 7) 100%);
+    background: linear-gradient(135deg, rgb(251 191 36) 0%, rgb(245 158 11) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .shadow-forest {
+    box-shadow: 0 10px 25px -5px rgba(34, 101, 34, 0.1), 0 10px 10px -5px rgba(34, 101, 34, 0.04);
+  }
+
+  .shadow-warm {
+    box-shadow: 0 10px 25px -5px rgba(251, 191, 36, 0.2), 0 10px 10px -5px rgba(251, 191, 36, 0.1);
+  }
+
+  .backdrop-blur-soft {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(248 250 252);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(34 101 34);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(21 128 61);
 }
