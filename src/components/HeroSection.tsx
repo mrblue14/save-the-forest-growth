@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Shield, Award } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -20,9 +20,10 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 lg:px-6 text-center text-white">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          {/* Badge */}
-          <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-            <span className="text-sm font-medium">🌱 Transparent Reforestation in Africa</span>
+          {/* Enhanced Badge with Trust Signals */}
+          <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
+            <Shield className="w-4 h-4 mr-2 text-gold-300" />
+            <span className="text-sm font-medium">🌱 Join 2,800+ members planting 15,000+ trees monthly across Africa</span>
           </div>
 
           {/* Main Headline */}
@@ -31,17 +32,19 @@ const HeroSection = () => {
             <span className="block text-nature-300">Growing Change</span>
           </h1>
 
-          {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of changemakers in our mission to restore African forests through transparent monthly subscriptions. 
-            Every tree planted supports local communities and fights climate change.
+          {/* Enhanced Subheading with Credibility */}
+          <p className="text-xl md:text-2xl text-gray-200 mb-4 max-w-3xl mx-auto leading-relaxed">
+            Join thousands of changemakers in our mission to restore African forests through transparent monthly subscriptions.
+          </p>
+          <p className="text-lg text-gold-200 mb-10 max-w-2xl mx-auto">
+            Every tree planted supports local communities and fights climate change with GPS-verified tracking.
           </p>
 
-          {/* CTA Buttons */}
+          {/* Enhanced CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
               size="lg" 
-              className="bg-gradient-forest hover:opacity-90 text-white font-semibold px-8 py-4 text-lg group"
+              className="bg-gradient-warm hover:opacity-90 text-white font-semibold px-8 py-4 text-lg group shadow-xl"
             >
               Plant Trees Monthly
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -53,33 +56,49 @@ const HeroSection = () => {
               className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg backdrop-blur-sm"
             >
               <Play className="mr-2 h-5 w-5" />
-              Watch Our Story
+              Learn How It Works
             </Button>
           </div>
 
-          {/* Impact Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold font-display text-nature-300 mb-1">
-                250K+
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center items-center gap-6 mb-12 text-sm text-gray-300">
+            <div className="flex items-center">
+              <Award className="w-4 h-4 mr-2 text-gold-400" />
+              <span>UN Climate Action Partner</span>
+            </div>
+            <div className="flex items-center">
+              <Shield className="w-4 h-4 mr-2 text-gold-400" />
+              <span>GPS-Verified Plantings</span>
+            </div>
+            <div className="flex items-center">
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+              <span>Carbon Neutral Certified</span>
+            </div>
+          </div>
+
+          {/* Enhanced Impact Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+              <div className="text-2xl md:text-3xl font-bold font-display text-gold-300 mb-1">
+                254K+
               </div>
               <div className="text-sm text-gray-300">Trees Planted</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold font-display text-nature-300 mb-1">
-                1,200
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+              <div className="text-2xl md:text-3xl font-bold font-display text-gold-300 mb-1">
+                1,249
               </div>
               <div className="text-sm text-gray-300">Hectares Restored</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold font-display text-nature-300 mb-1">
-                5,800
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+              <div className="text-2xl md:text-3xl font-bold font-display text-gold-300 mb-1">
+                5,847
               </div>
               <div className="text-sm text-gray-300">Families Supported</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold font-display text-nature-300 mb-1">
-                120T
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+              <div className="text-2xl md:text-3xl font-bold font-display text-gold-300 mb-1">
+                127T
               </div>
               <div className="text-sm text-gray-300">CO₂ Sequestered</div>
             </div>

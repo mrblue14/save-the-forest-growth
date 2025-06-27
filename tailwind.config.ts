@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom eco-friendly color palette
+				// Enhanced eco-friendly color palette with warm accents
 				forest: {
 					50: '#f0f9f4',
 					100: '#dcf2e3',
@@ -99,6 +98,31 @@ export default {
 					700: '#2d7e2d',
 					800: '#286428',
 					900: '#235323',
+				},
+				// New warm accent colors for CTAs and highlights
+				gold: {
+					50: '#fffbeb',
+					100: '#fef3c7',
+					200: '#fde68a',
+					300: '#fcd34d',
+					400: '#fbbf24',
+					500: '#f59e0b',
+					600: '#d97706',
+					700: '#b45309',
+					800: '#92400e',
+					900: '#78350f',
+				},
+				warm: {
+					50: '#fef7ed',
+					100: '#fdedd3',
+					200: '#fbd8a5',
+					300: '#f8bb6d',
+					400: '#f59632',
+					500: '#f37a0a',
+					600: '#e45e07',
+					700: '#bd4708',
+					800: '#973a0e',
+					900: '#7c300f',
 				}
 			},
 			borderRadius: {
