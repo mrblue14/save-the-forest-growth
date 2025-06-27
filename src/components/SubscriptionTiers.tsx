@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Check, Star, Crown, TreePine, Zap, Heart } from 'lucide-react';
+import { Check, Star, Crown, TreePine, Zap, Heart, Shield } from 'lucide-react';
 
 const tiers = [
   {
