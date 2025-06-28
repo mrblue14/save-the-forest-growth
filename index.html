@@ -1,28 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SaveTheForest - Planting Hope, Growing Change</title>
-    <meta name="description" content="Join SaveTheForest in our mission to reforest Africa through transparent monthly subscriptions. Plant trees, support communities, and track your environmental impact." />
+    <meta name="description" content="Join 2,847+ members planting 254,892+ trees in Africa with SaveTheForest’s transparent subscriptions. Track your impact with GPS-verified planting." />
+    <meta name="keywords" content="plant trees Africa, reforestation subscription, carbon offset charity, environmental conservation" />
     <meta name="author" content="SaveTheForest" />
 
+    <!-- Open Graph / Twitter Card -->
     <meta property="og:title" content="SaveTheForest - Planting Hope, Growing Change" />
-    <meta property="og:description" content="Join SaveTheForest in our mission to reforest Africa through transparent monthly subscriptions. Plant trees, support communities, and track your environmental impact." />
+    <meta property="og:description" content="Join 2,847+ members planting 254,892+ trees in Africa with SaveTheForest’s transparent subscriptions." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
+    <meta property="og:image" content="/assets/og-image.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@savetheforest" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    
+    <meta name="twitter:image" content="/assets/og-image.webp" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "SaveTheForest",
+        "url": "https://savetheforest.app",
+        "description": "A transparent platform for reforesting Africa through monthly subscriptions, supporting communities and tracking environmental impact.",
+        "sameAs": ["https://x.com/savetheforest"]
+      }
+    </script>
+
+    <!-- Security: Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://player.vimeo.com; style-src 'self' https://fonts.googleapis.com; img-src 'self' data: https://lovable.dev; connect-src 'self' https://api.supabase.co;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style">
+    <link rel="preload" href="/src/main.tsx" as="script">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  </head>
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
