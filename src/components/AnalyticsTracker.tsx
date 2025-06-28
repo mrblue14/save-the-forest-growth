@@ -1,10 +1,18 @@
 
 import { useEffect } from 'react';
 
+// Extend Window interface to include gtag and dataLayer
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+    dataLayer: any[];
+  }
+}
+
 // Google Analytics tracking function
 export const trackEvent = (action: string, category: string, label?: string, value?: number) => {
-  if (typeof gtag !== 'undefined') {
-    gtag('event', action, {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', action, {
       event_category: category,
       event_label: label,
       value: value
@@ -32,8 +40,9 @@ export const initAnalytics = (measurementId: string) => {
     document.head.appendChild(script2);
 
     // Make gtag available globally
-    window.gtag = window.gtag || function() {
-      window.dataLayer.push(arguments);
+    window.gtag = window.gtag || function(...args: any[]) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(args);
     };
   }
 };

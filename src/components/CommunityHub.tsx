@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Users, Trophy, MapPin, Calendar, MessageCircle, Heart, Share2, Target, Leaf } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
+import { trackEvent } from './AnalyticsTracker';
 
 const CommunityHub = () => {
   const [activeTab, setActiveTab] = useState('challenges');
@@ -75,20 +75,15 @@ const CommunityHub = () => {
     { location: 'Lubumbashi, DR Congo', trees: 98, time: '3 days ago', link: '/impact-map/lubumbashi' }
   ];
 
-  const joinChallenge = (challengeId) => {
+  const joinChallenge = (challengeId: number) => {
     // Track the event for analytics
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'click', {
-        event_category: 'Community',
-        event_label: `Join Challenge ${challengeId}`
-      });
-    }
+    trackEvent('click', 'Community', `Join Challenge ${challengeId}`);
     
     // Redirect to subscription page with challenge context
     window.location.href = '/pricing?challenge=' + challengeId;
   };
 
-  const shareStory = (story) => {
+  const shareStory = (story: any) => {
     const text = `Inspiring story from ${story.author} in ${story.location}: "${story.story}" 🌳 Join SaveTheForest to make a difference: ${window.location.origin} #PlantTrees #CommunityImpact`;
     
     if (navigator.share) {
