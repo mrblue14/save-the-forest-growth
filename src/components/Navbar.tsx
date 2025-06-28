@@ -18,12 +18,17 @@ const Navbar = () => {
     }
   };
 
+  const navigateToPage = (path: string) => {
+    window.location.href = path;
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className="bg-white/95 backdrop-blur-sm border-b border-forest-100 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2 cursor-pointer" onClick={() => scrollToSection('home')}>
+          <div className="flex items-center space-x-2 cursor-pointer" onClick={() => navigateToPage('/')}>
             <div className="bg-gradient-forest p-2 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <Leaf className="h-6 w-6 text-white" />
             </div>
@@ -35,7 +40,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => scrollToSection('home')}
+              onClick={() => navigateToPage('/')}
               className="text-forest-700 hover:text-forest-900 transition-colors font-medium hover:underline decoration-2 underline-offset-4"
             >
               Home
@@ -51,6 +56,12 @@ const Navbar = () => {
               className="text-forest-700 hover:text-forest-900 transition-colors font-medium hover:underline decoration-2 underline-offset-4"
             >
               Impact
+            </button>
+            <button 
+              onClick={() => navigateToPage('/community')}
+              className="text-forest-700 hover:text-forest-900 transition-colors font-medium hover:underline decoration-2 underline-offset-4"
+            >
+              Community
             </button>
             <button 
               onClick={() => scrollToSection('about')}
@@ -90,7 +101,7 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-forest-100 py-4 space-y-4 shadow-lg">
             <button 
-              onClick={() => scrollToSection('home')}
+              onClick={() => navigateToPage('/')}
               className="block w-full text-left px-4 py-3 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium min-h-[48px]"
             >
               Home
@@ -106,6 +117,12 @@ const Navbar = () => {
               className="block w-full text-left px-4 py-3 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium min-h-[48px]"
             >
               Impact
+            </button>
+            <button 
+              onClick={() => navigateToPage('/community')}
+              className="block w-full text-left px-4 py-3 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium min-h-[48px]"
+            >
+              Community
             </button>
             <button 
               onClick={() => scrollToSection('about')}

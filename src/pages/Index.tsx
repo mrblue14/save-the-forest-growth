@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import SEOHead from '@/components/SEOHead';
 import StructuredData from '@/components/StructuredData';
@@ -15,11 +15,18 @@ import CallToActionSection from '@/components/CallToActionSection';
 import SocialProof from '@/components/SocialProof';
 import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
+import AnalyticsTracker, { trackEvent } from '@/components/AnalyticsTracker';
 
 const Index = () => {
+  useEffect(() => {
+    // Track page view
+    trackEvent('page_view', 'Navigation', 'Home');
+  }, []);
+
   return (
     <HelmetProvider>
       <div className="min-h-screen">
+        <AnalyticsTracker />
         <SEOHead />
         <StructuredData />
         <Navbar />
