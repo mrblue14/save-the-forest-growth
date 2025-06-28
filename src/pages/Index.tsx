@@ -5,6 +5,7 @@ import SEOHead from '@/components/SEOHead';
 import StructuredData from '@/components/StructuredData';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import UrgencySection from '@/components/UrgencySection';
 import AboutSection from '@/components/AboutSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import ImpactStories from '@/components/ImpactStories';
@@ -31,6 +32,7 @@ const Index = () => {
         <StructuredData />
         <Navbar />
         <HeroSection />
+        <UrgencySection />
         <AboutSection />
         <HowItWorksSection />
         <ImpactStories />

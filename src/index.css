@@ -99,11 +99,19 @@
     font-feature-settings: "kern" 1, "liga" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Ensure minimum font size for mobile readability */
+    font-size: 16px;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
     font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* Mobile-first button sizing */
+  button {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 
@@ -137,6 +145,11 @@
     background: linear-gradient(135deg, rgb(251 191 36) 0%, rgb(245 158 11) 100%);
   }
 
+  /* New urgent orange gradient */
+  .bg-gradient-urgent {
+    background: linear-gradient(135deg, rgb(255 107 53) 0%, rgb(229 90 43) 100%);
+  }
+
   .text-gradient-forest {
     background: linear-gradient(135deg, rgb(34 101 34) 0%, rgb(21 128 61) 100%);
     -webkit-background-clip: text;
@@ -158,6 +171,13 @@
     background-clip: text;
   }
 
+  .text-gradient-urgent {
+    background: linear-gradient(135deg, rgb(255 107 53) 0%, rgb(229 90 43) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .shadow-forest {
     box-shadow: 0 10px 25px -5px rgba(34, 101, 34, 0.1), 0 10px 10px -5px rgba(34, 101, 34, 0.04);
   }
@@ -166,9 +186,19 @@
     box-shadow: 0 10px 25px -5px rgba(251, 191, 36, 0.2), 0 10px 10px -5px rgba(251, 191, 36, 0.1);
   }
 
+  .shadow-urgent {
+    box-shadow: 0 10px 25px -5px rgba(255, 107, 53, 0.2), 0 10px 10px -5px rgba(255, 107, 53, 0.1);
+  }
+
   .backdrop-blur-soft {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Mobile touch targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 
@@ -193,4 +223,32 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(21 128 61);
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ensure text remains readable on mobile */
+  body {
+    font-size: 16px !important;
+  }
+  
+  /* Better touch targets on mobile */
+  button, a {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* Improved animations for mobile performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
