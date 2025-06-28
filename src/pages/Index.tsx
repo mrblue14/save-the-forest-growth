@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import SEOHead from '@/components/SEOHead';
@@ -17,6 +16,7 @@ import SocialProof from '@/components/SocialProof';
 import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 import AnalyticsTracker, { trackEvent } from '@/components/AnalyticsTracker';
+import GPSTrackingSection from '@/components/GPSTrackingSection';
 
 const Index = () => {
   useEffect(() => {
@@ -33,6 +33,7 @@ const Index = () => {
         <Navbar />
         <HeroSection />
         <UrgencySection />
+        <GPSTrackingSection />
         <AboutSection />
         <HowItWorksSection />
         <ImpactStories />
