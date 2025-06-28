@@ -1,5 +1,8 @@
 
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
+import SEOHead from '@/components/SEOHead';
+import StructuredData from '@/components/StructuredData';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
@@ -15,20 +18,24 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <HowItWorksSection />
-      <ImpactStories />
-      <SubscriptionTiers />
-      <ImpactDashboard />
-      <EducationalContent />
-      <CallToActionSection />
-      <SocialProof />
-      <FAQSection />
-      <Footer />
-    </div>
+    <HelmetProvider>
+      <div className="min-h-screen">
+        <SEOHead />
+        <StructuredData />
+        <Navbar />
+        <HeroSection />
+        <AboutSection />
+        <HowItWorksSection />
+        <ImpactStories />
+        <SubscriptionTiers />
+        <ImpactDashboard />
+        <EducationalContent />
+        <CallToActionSection />
+        <SocialProof />
+        <FAQSection />
+        <Footer />
+      </div>
+    </HelmetProvider>
   );
 };
 

@@ -41,22 +41,10 @@ const Navbar = () => {
               Home
             </button>
             <button 
-              onClick={() => scrollToSection('about')}
-              className="text-forest-700 hover:text-forest-900 transition-colors font-medium hover:underline decoration-2 underline-offset-4"
-            >
-              About Us
-            </button>
-            <button 
               onClick={() => scrollToSection('how-it-works')}
               className="text-forest-700 hover:text-forest-900 transition-colors font-medium hover:underline decoration-2 underline-offset-4"
             >
-              Our Mission
-            </button>
-            <button 
-              onClick={() => scrollToSection('pricing')}
-              className="text-forest-700 hover:text-forest-900 transition-colors font-medium hover:underline decoration-2 underline-offset-4"
-            >
-              Get Involved
+              How It Works
             </button>
             <button 
               onClick={() => scrollToSection('impact')}
@@ -64,19 +52,31 @@ const Navbar = () => {
             >
               Impact
             </button>
+            <button 
+              onClick={() => scrollToSection('about')}
+              className="text-forest-700 hover:text-forest-900 transition-colors font-medium hover:underline decoration-2 underline-offset-4"
+            >
+              About
+            </button>
+            <button 
+              onClick={() => scrollToSection('pricing')}
+              className="text-forest-700 hover:text-forest-900 transition-colors font-medium hover:underline decoration-2 underline-offset-4"
+            >
+              Plant Trees Monthly
+            </button>
             
-            {/* CTA Button */}
+            {/* Enhanced CTA Button */}
             <Button 
               onClick={() => scrollToSection('pricing')}
-              className="bg-gradient-forest hover:opacity-90 text-white font-semibold px-6 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-gradient-forest hover:opacity-90 text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[48px]"
             >
-              Plant Trees Now
+              Start Planting Trees
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <Button variant="ghost" size="sm" onClick={toggleMobileMenu}>
+            <Button variant="ghost" size="sm" onClick={toggleMobileMenu} className="min-h-[48px] min-w-[48px]">
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6 text-forest-700" />
               ) : (
@@ -91,40 +91,40 @@ const Navbar = () => {
           <div className="md:hidden bg-white border-t border-forest-100 py-4 space-y-4 shadow-lg">
             <button 
               onClick={() => scrollToSection('home')}
-              className="block w-full text-left px-4 py-2 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium"
+              className="block w-full text-left px-4 py-3 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium min-h-[48px]"
             >
               Home
             </button>
             <button 
-              onClick={() => scrollToSection('about')}
-              className="block w-full text-left px-4 py-2 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium"
-            >
-              About Us
-            </button>
-            <button 
               onClick={() => scrollToSection('how-it-works')}
-              className="block w-full text-left px-4 py-2 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium"
+              className="block w-full text-left px-4 py-3 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium min-h-[48px]"
             >
-              Our Mission
-            </button>
-            <button 
-              onClick={() => scrollToSection('pricing')}
-              className="block w-full text-left px-4 py-2 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium"
-            >
-              Get Involved
+              How It Works
             </button>
             <button 
               onClick={() => scrollToSection('impact')}
-              className="block w-full text-left px-4 py-2 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium"
+              className="block w-full text-left px-4 py-3 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium min-h-[48px]"
             >
               Impact
+            </button>
+            <button 
+              onClick={() => scrollToSection('about')}
+              className="block w-full text-left px-4 py-3 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium min-h-[48px]"
+            >
+              About
+            </button>
+            <button 
+              onClick={() => scrollToSection('pricing')}
+              className="block w-full text-left px-4 py-3 text-forest-700 hover:text-forest-900 hover:bg-forest-50 transition-colors font-medium min-h-[48px]"
+            >
+              Plant Trees Monthly
             </button>
             <div className="px-4">
               <Button 
                 onClick={() => scrollToSection('pricing')}
-                className="w-full bg-gradient-forest hover:opacity-90 text-white font-semibold py-3 rounded-xl shadow-lg"
+                className="w-full bg-gradient-forest hover:opacity-90 text-white font-semibold py-4 rounded-xl shadow-lg min-h-[48px]"
               >
-                Plant Trees Now
+                Start Planting Trees
               </Button>
             </div>
           </div>
