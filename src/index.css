@@ -101,6 +101,16 @@
     -moz-osx-font-smoothing: grayscale;
     /* Ensure minimum font size for mobile readability */
     font-size: 16px;
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+  }
+
+  html {
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    /* Improve scroll behavior on mobile */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -202,14 +212,9 @@
   }
 }
 
-/* Smooth scrolling for the entire page */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Custom scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -218,7 +223,7 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: rgb(34 101 34);
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -242,6 +247,16 @@ html {
     min-height: 48px;
     min-width: 48px;
   }
+
+  /* Prevent zoom on input focus */
+  input, select, textarea {
+    font-size: 16px;
+  }
+
+  /* Improve mobile scroll performance */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* Improved animations for mobile performance */
@@ -250,5 +265,24 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Fix for mobile viewport issues */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Prevent horizontal overflow on mobile */
+@media (max-width: 768px) {
+  * {
+    max-width: 100%;
+  }
+  
+  img {
+    height: auto;
+    max-width: 100%;
   }
 }

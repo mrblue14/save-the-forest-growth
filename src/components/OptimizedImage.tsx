@@ -29,20 +29,20 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     setHasError(true);
   };
 
-  // Convert to WebP format if possible
+  // Optimize image URLs for mobile
   const optimizedSrc = src.includes('unsplash.com') 
-    ? `${src}&auto=format&fit=crop&q=80&w=${width || 800}`
+    ? `${src}&auto=format&fit=crop&q=75&w=${width || 600}`
     : src;
 
   return (
     <div className={`relative ${className}`}>
       {!isLoaded && !hasError && (
-        <div className="absolute inset-0 bg-sage-100 animate-pulse rounded-lg" />
+        <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg" />
       )}
       
       {hasError ? (
-        <div className="bg-sage-100 flex items-center justify-center rounded-lg min-h-[200px]">
-          <span className="text-sage-600">Image not available</span>
+        <div className="bg-gray-100 flex items-center justify-center rounded-lg min-h-[200px]">
+          <span className="text-gray-600">Image not available</span>
         </div>
       ) : (
         <img

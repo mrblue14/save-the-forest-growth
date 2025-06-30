@@ -5,26 +5,15 @@ import { TreePine, AlertTriangle, Heart, Globe } from 'lucide-react';
 
 const UrgencySection = () => {
   const [forestLost, setForestLost] = useState(2.4);
-  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
-    // Simulate forest loss counter
+    // Simulate forest loss counter - reduced frequency for mobile performance
     const interval = setInterval(() => {
       setForestLost(prev => Number((prev + 0.1).toFixed(1)));
-    }, 30000); // Update every 30 seconds
+    }, 60000); // Update every minute instead of 30 seconds
 
-    // Handle sticky behavior on mobile
-    const handleScroll = () => {
-      const heroHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
-      setIsSticky(scrollPosition > heroHeight && window.innerWidth <= 768);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    
     return () => {
       clearInterval(interval);
-      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -36,18 +25,14 @@ const UrgencySection = () => {
   ];
 
   return (
-    <section 
-      className={`bg-white border-b-4 border-[#FF6B35] transition-all duration-300 ${
-        isSticky ? 'fixed top-0 left-0 right-0 z-40 shadow-lg' : 'relative'
-      }`}
-    >
+    <section className="bg-white border-b-4 border-[#FF6B35] relative">
       <div className="container mx-auto px-4 py-6 md:py-8">
         {/* Forest Loss Counter */}
         <div className="text-center mb-6 md:mb-8">
           <div className="inline-flex items-center bg-[#FF6B35]/10 border-2 border-[#FF6B35] rounded-2xl px-4 md:px-6 py-3 md:py-4 mb-4">
             <AlertTriangle className="w-5 h-5 md:w-6 md:h-6 text-[#FF6B35] mr-3 animate-pulse" />
-            <span className="text-lg md:text-xl font-bold text-[#FF6B35]">
-              🚨 Forest Lost Today: {forestLost} acres (and counting)
+            <span className="text-base md:text-xl font-bold text-[#FF6B35]">
+              🚨 Forest Lost Today: {forestLost} acres
             </span>
           </div>
         </div>
@@ -85,11 +70,11 @@ const UrgencySection = () => {
                     <span className="font-bold">847/1000</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div className="bg-[#2D7D32] h-3 rounded-full transition-all duration-500" style={{width: '84.7%'}}></div>
+                    <div className="bg-[#2D7D32] h-3 rounded-full" style={{width: '84.7%'}}></div>
                   </div>
                 </div>
                 <div className="text-xs text-gray-600">
-                  <span className="animate-pulse">🌱</span> 153 trees to go for today's goal!
+                  <span>🌱</span> 153 trees to go for today's goal!
                 </div>
               </div>
             </div>
@@ -120,7 +105,7 @@ const UrgencySection = () => {
         <div className="text-center mt-6 md:mt-8">
           <Button 
             size="lg"
-            className="bg-[#FF6B35] hover:bg-[#E55A2B] text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 min-h-[48px]"
+            className="bg-[#FF6B35] hover:bg-[#E55A2B] text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
           >
             🌱 Take Action Now - Plant Trees Today!
           </Button>
